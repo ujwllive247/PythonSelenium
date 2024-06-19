@@ -1,3 +1,6 @@
+# Ctrl + click on the link , open the link other tab...
+
+
 
 import time
 
@@ -11,4 +14,13 @@ driver.maximize_window()
 
 driver.get("http://omayo.blogspot.com/")
 
-driver.find_element(By.XPATH,"//div[@id='LinkList']//a")
+links =driver.find_element(By.XPATH,"//div[@id='LinkList1']//a")   #  '//*[@href]'    #
+
+for link in links:
+    actions = ActionChains(driver)
+    actions.key_down(Keys.CONTROL).click(link).key_up(Keys.CONTROL).perform()
+
+
+time.sleep(5)
+
+driver.quit()
