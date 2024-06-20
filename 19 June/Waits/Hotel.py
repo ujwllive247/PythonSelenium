@@ -40,3 +40,5 @@ print(f"The total amount of items is {order_total}")
 
 
 
+
+
